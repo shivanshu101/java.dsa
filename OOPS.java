@@ -1,28 +1,39 @@
-import java.util.*;
-
-class Shapes {
-    public void area() {
-        System.out.println("Displays Area of Shape");
+abstract class Animal {
+    abstract void walk();
+    void breathe() {
+        System.out.println("This animal breathes air");
     }
- }
- class Triangle extends Shape {
-    public void area(int h, int b) {
-        System.out.println((1/2)*b*h);
-    }  
- }
- class Circle extends Shape {
-    public void area(int r) {
-        System.out.println((3.14)*r*r);
-    }  
+    Animal() {
+        System.out.println("You are about to create an Animal.");
+    }
  }
  
- public class OOPS{
-    public static void main(String[] args){
-        Triangle t = new Triangle();
-        Circle  c = new Circle();
-
-        t.area(5, 6);
-        c.area(5);
-        
+ 
+ class Horse extends Animal {
+    Horse() {
+        System.out.println("Wow, you have created a Horse!");
+    }
+    void walk() {
+        System.out.println("Horse walks on 4 legs");
     }
  }
+ 
+ 
+ class Chicken extends Animal {
+    Chicken() {
+        System.out.println("Wow, you have created a Chicken!");
+    }
+    void walk() {
+        System.out.println("Chicken walks on 2 legs");
+    }
+ }
+ 
+ 
+ public class OOPS{
+    public static void main(String args[]) {
+       Horse horse = new Horse();
+       horse.walk();
+       horse.breathe();
+    }
+ }
+ 
